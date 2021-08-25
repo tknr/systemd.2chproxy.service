@@ -1,0 +1,3 @@
+[submodule "2chproxy.pl"]
+	path = 2chproxy.pl
+	url = https://github.com/yama-natuki/2chproxy.pl.git

@@ -1,0 +1,17 @@
+[Unit]
+Description=rTorrent with tmux
+Requires=network.target local-fs.target
+
+[Service]
+Type=simple
+RemainAfterExit=yes
+KillMode=control-group
+KillSignal=SIGTERM
+User=%I
+ExecStart=/usr/local/bin/2chproxy --config ~/.2chproxy.yml
+ExecStop=/usr/bin/pkill 2chproxy
+WorkingDirectory=/home/%I/
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
